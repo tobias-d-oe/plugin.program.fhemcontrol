@@ -1,0 +1,9 @@
+[{
+        "name": "Heizung Dusche aus",
+	"cmd": "set Heizung_Dusche desired-temp off",
+        "pic": "gluehbirne-an.png"
+}, {
+        "name": "Heizung Dusche 20°C",
+	"cmd": "set Heizung_Dusche desired-temp 20",
+        "pic": "gluehbirne-aus.png"
+}]

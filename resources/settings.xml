@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings>
+    <category label="FHEM-Control MAIN">
+        <setting id="ip" type="text" enable='true' label="FHEM IP" default=""/>
+        <setting id="port" type="text" enable='true' label="FHEM PORT" default="7072"/>
+    </category>
+</settings>
+

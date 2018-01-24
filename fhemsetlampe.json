@@ -1,0 +1,17 @@
+[{
+	"name": "Steinlampe on",
+	"cmd": "set Steinlampe_Kuhstall on",
+        "pic": "gluehbirne-an.png"
+}, {
+        "name": "Steinlampe off",
+	"cmd": "set Steinlampe_Kuhstall off",
+        "pic": "gluehbirne-aus.png"
+}, {
+        "name": "Ambilight on",
+	"cmd": "set Ambilight on",
+        "pic": "gluehbirne-an.png"
+}, {
+        "name": "Ambilight off",
+	"cmd": "set Ambilight off",
+        "pic": "gluehbirne-aus.png"
+}]
