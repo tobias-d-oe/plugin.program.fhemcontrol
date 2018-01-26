@@ -98,7 +98,7 @@
 				<onup>3</onup>
 				<ondown>3</ondown>
 				<onleft>7</onleft>
-				<onright>61</onright>
+				<onright>7</onright>
 				<pagecontrol>61</pagecontrol>
 				<scrolltime>200</scrolltime>
 <onclick>RunScript(plugin.program.fhemcontrol, "?methode=set&cmd=$INFO[ListItem.Property(CMD)]")</onclick>
@@ -183,6 +183,24 @@
 				<content>plugin://plugin.program.fhemcontrol?methode=get_sets_items&amp;file=$INFO[FHEMControl.Window]&amp;title=$INFO[FHEMControl.Title]</content>
 
 			</control>
+                                        <control type="button" id="7">
+                                                <description>Cancel button</description>
+                                                <width>200</width>
+                                                <height>40</height>
+						<left>612</left>
+						<top>100</top>
+                                                <label>Schließen</label>
+                                                <font>font12_title</font>
+                                                <textcolor>white</textcolor>
+                                                <focusedcolor>white</focusedcolor>
+                                                <align>center</align>
+						<onclick>PreviousMenu</onclick>
+						<onleft>333333</onleft>
+						<onright>333333</onright>
+                                        </control>
+
+
+
 		</control>
         </controls>
 </window>
