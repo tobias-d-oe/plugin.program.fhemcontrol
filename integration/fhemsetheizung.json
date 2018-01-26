@@ -1,0 +1,21 @@
+{
+  "title":"Heizung",
+  "entries":
+  [{
+        "name": "Heizung Dusche aus",
+	"cmd": "set Heizung_Dusche desired-temp off",
+        "pic": "heizung-an.png"
+  }, {
+        "name": "Heizung Dusche 20C",
+	"cmd": "set Heizung_Dusche desired-temp 20",
+        "pic": "heizung-aus.png"
+  }, {
+        "name": "Heizung Gaestezimmer aus",
+	"cmd": "set Heizung_Tobias desired-temp off",
+        "pic": "heizung-an.png"
+  }, {
+        "name": "Heizung Gaestezimmer 20C",
+	"cmd": "set Heizung_Tobias desired-temp 20",
+        "pic": "heizung-aus.png"
+  }]
+}

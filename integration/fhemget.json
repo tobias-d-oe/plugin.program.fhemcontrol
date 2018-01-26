@@ -1,0 +1,65 @@
+{ 
+"Readings":
+	[ 
+		{ 
+			"FHEMDev": "Zentralheizung",
+		  	"SearchKey":"Aussentemperatur",
+		        "INFOVar":"Temp.Zentralheizung"
+		},{	
+			"FHEMDev": "Sensor_Temp_Kuhstall",
+		  	"SearchKey":"temperature",
+		        "INFOVar":"Temp.Sensor_Temp_Kuhstall"
+		},{	
+			"FHEMDev": "Sensor_Schlafzimmer",
+		  	"SearchKey":"temperature",
+		        "INFOVar":"Temp.Sensor_Schlafzimmer"
+		},{	
+			"FHEMDev": "Heizung_Dusche",
+		  	"SearchKey":"temperature",
+		        "INFOVar":"Temp.Heizung_Dusche"
+		},{	
+			"FHEMDev": "Heizung_Tobias",
+		  	"SearchKey":"temperature",
+		        "INFOVar":"Temp.Heizung_Tobias"
+		}
+
+	],
+"Internal":
+  	[
+		{ 
+			"FHEMDev": "Fenster_Dusche",
+		  	"SearchKey":"STATE",
+		        "INFOVar":"Fenster.Fenster_Dusche"
+		},{	
+			"FHEMDev": "Fenster_Tobias_SZ",
+		  	"SearchKey":"STATE",
+		        "INFOVar":"Fenster.Fenster_Tobias_SZ"
+		},{	
+			"FHEMDev": "Fenster_Tobias_WZ",
+		  	"SearchKey":"STATE",
+		        "INFOVar":"Fenster.Fenster_Tobias_WZ"
+		},{	
+			"FHEMDev": "StaubsaugerEG",
+		  	"SearchKey":"STATE",
+		        "INFOVar":"Hauswirtschaft.StaubsaugerEG"
+		},{	
+			"FHEMDev": "Spuehlmaschine_Status",
+		  	"SearchKey":"STATE",
+		        "INFOVar":"Hauswirtschaft.Spuehlmaschine_Status"
+		},{	
+			"FHEMDev": "Waschmaschine_Status",
+		  	"SearchKey":"STATE",
+		        "INFOVar":"Hauswirtschaft.Waschmaschine_Status"
+		},{	
+			"FHEMDev": "Trockner_Status",
+		  	"SearchKey":"STATE",
+		        "INFOVar":"Hauswirtschaft.Trockner_Status"
+		}
+
+
+
+
+
+	]
+}
+

@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+        <include name="HomeRecentlyAddedHausautomatisierung">
+                        <control type="group" id="5938">
+                                <left>390</left>
+                                <top>30</top>
+                                <visible>Container(9000).Hasfocus(51515) + !Skin.HasSetting(HomepageHideRecentlyAddedVideo)</visible>
+                                <include>VisibleFadeEffect</include>
+
+                                                <control type="image">
+                                                        <description>background</description>
+                                                        <left>0</left>
+                                                        <top>0</top>
+                                                        <width>500</width>
+                                                        <height>310</height>
+                                                        <texture border="15">RecentAddedBack.png</texture>
+                                                </control>
+<!--
+                                                <control type="label">
+                                                          <left>15</left>
+                                                          <top>10</top>
+                                                          <width>470</width>
+                                                          <height>20</height>
+                                                          <label>Hausautomatisierung</label>
+                                                          <align>center</align>
+                                                          <aligny>top</aligny>
+                                                          <scroll>true</scroll>
+                                                          <scrollspeed>50</scrollspeed>
+                                                    <font>font12_title</font>
+                                                    <textcolor>white</textcolor>
+                                                    <shadowcolor>black</shadowcolor>
+            
+                                                </control>
+-->
+<!-- Begin Temperatur -->
+                                            <control type="group">
+                                              <left>15</left>
+                                              <top>30</top>
+                                              <include>VisibleFadeEffect</include>
+
+                                                <control type="image">
+                                                        <description>background</description>
+                                                        <left>0</left>
+                                                        <top>17</top>
+                                                        <width>230</width>
+                                                        <height>120</height>
+                                                        <texture border="15">RecentAddedBack.png</texture>
+                                                </control>
+
+
+                                                <control type="label">
+                                                          <left>10</left>
+                                                          <top>0</top>
+                                                          <width>470</width>
+                                                          <height>20</height>
+                                                          <label>Temperaturen</label>
+                                                          <align>left</align>
+                                                          <aligny>top</aligny>
+                                                          <scroll>true</scroll>
+                                                          <scrollspeed>50</scrollspeed>
+                                                    <font>font12</font>
+                                                    <textcolor>white</textcolor>
+                                                    <shadowcolor>black</shadowcolor>
+                                                </control>
+                                                <control type="label">
+                                                          <left>10</left>
+                                                          <top>25</top>
+                                                          <width>470</width>
+                                                          <height>20</height>
+                                                          <label>Außentemperatur</label>
+                                                          <align>left</align>
+                                                          <aligny>top</aligny>
+                                                          <scroll>true</scroll>
+                                                          <scrollspeed>50</scrollspeed>
+                                                    <font>font12</font>
+                                                    <textcolor>grey</textcolor>
+                                                    <shadowcolor>black</shadowcolor>
+                                                </control>
+                                                <control type="label">
+                                                          <left>10</left>
+                                                          <top>45</top>
+                                                          <width>470</width>
+                                                          <height>20</height>
+                                                          <label>Kuhstall</label>
+                                                          <align>left</align>
+                                                          <aligny>top</aligny>
+                                                          <scroll>true</scroll>
+                                                          <scrollspeed>50</scrollspeed>
+                                                    <font>font12</font>
+                                                    <textcolor>grey</textcolor>
+                                                    <shadowcolor>black</shadowcolor>
+                                                </control>
+                                                <control type="label">
+                                                          <left>10</left>
+                                                          <top>65</top>
+                                                          <width>470</width>
+                                                          <height>20</height>
+                                                          <label>Schlafzimmer</label>
+                                                          <align>left</align>
+                                                          <aligny>top</aligny>
+                                                          <scroll>true</scroll>
+                                                          <scrollspeed>50</scrollspeed>
+                                                    <font>font12</font>
+                                                    <textcolor>grey</textcolor>
+                                                    <shadowcolor>black</shadowcolor>
+                                                </control>
+                                                <control type="label">
+                                                          <left>10</left>
+                                                          <top>85</top>
+                                                          <width>470</width>
+                                                          <height>20</height>
+                                                          <label>Gästezimmer</label>
+                                                          <align>left</align>
+                                                          <aligny>top</aligny>
+                                                          <scroll>true</scroll>
+                                                          <scrollspeed>50</scrollspeed>
+                                                    <font>font12</font>
+                                                    <textcolor>grey</textcolor>
+                                                    <shadowcolor>black</shadowcolor>
+                                                </control>
+                                                <control type="label">
+                                                          <left>10</left>
+                                                          <top>105</top>
+                                                          <width>470</width>
+                                                          <height>20</height>
+                                                          <label>Dusche</label>
+                                                          <align>left</align>
+                                                          <aligny>top</aligny>
+                                                          <scroll>true</scroll>
+                                                          <scrollspeed>50</scrollspeed>
+                                                    <font>font12</font>
+                                                    <textcolor>grey</textcolor>
+                                                    <shadowcolor>black</shadowcolor>
+                                                </control>
+
+                                                <control type="label">
+                                                          <left>10</left>
+                                                          <top>25</top>
+                                                          <width>210</width>
+                                                          <height>20</height>
+                                                          <label>$INFO[Window.Property(Temp.Zentralheizung)] °C</label>
+                                                          <align>right</align>
+                                                          <aligny>top</aligny>
+                                                          <scroll>true</scroll>
+                                                          <scrollspeed>50</scrollspeed>
+                                                    <font>font12</font>
+                                                    <textcolor>grey</textcolor>
+                                                    <shadowcolor>black</shadowcolor>
+                                                </control>
+                                                <control type="label">
+                                                          <left>10</left>
+                                                          <top>45</top>
+                                                          <width>210</width>
+                                                          <height>20</height>
+                                                          <label>$INFO[Window.Property(Temp.Sensor_Temp_Kuhstall)] °C</label>
+                                                          <align>right</align>
+                                                          <aligny>top</aligny>
+                                                          <scroll>true</scroll>
+                                                          <scrollspeed>50</scrollspeed>
+                                                    <font>font12</font>
+                                                    <textcolor>grey</textcolor>
+                                                    <shadowcolor>black</shadowcolor>
+                                                </control>
+                                                <control type="label">
+                                                          <left>10</left>
+                                                          <top>65</top>
+                                                          <width>210</width>
+                                                          <height>20</height>
+                                                          <label>$INFO[Window.Property(Temp.Sensor_Schlafzimmer)] °C</label>
+                                                          <align>right</align>
+                                                          <aligny>top</aligny>
+                                                          <scroll>true</scroll>
+                                                          <scrollspeed>50</scrollspeed>
+                                                    <font>font12</font>
+                                                    <textcolor>grey</textcolor>
+                                                    <shadowcolor>black</shadowcolor>
+                                                </control>
+                                                <control type="label">
+                                                          <left>10</left>
+                                                          <top>85</top>
+                                                          <width>210</width>
+                                                          <height>20</height>
+                                                          <label>$INFO[Window.Property(Temp.Heizung_Tobias)] °C</label>
+                                                          <align>right</align>
+                                                          <aligny>top</aligny>
+                                                          <scroll>true</scroll>
+                                                          <scrollspeed>50</scrollspeed>
+                                                    <font>font12</font>
+                                                    <textcolor>grey</textcolor>
+                                                    <shadowcolor>black</shadowcolor>
+                                                </control>
+                                                <control type="label">
+                                                          <left>10</left>
+                                                          <top>105</top>
+                                                          <width>210</width>
+                                                          <height>20</height>
+                                                          <label>$INFO[Window.Property(Temp.Heizung_Dusche)] °C</label>
+                                                          <align>right</align>
+                                                          <aligny>top</aligny>
+                                                          <scroll>true</scroll>
+                                                          <scrollspeed>50</scrollspeed>
+                                                    <font>font12</font>
+                                                    <textcolor>grey</textcolor>
+                                                    <shadowcolor>black</shadowcolor>
+                                                </control>
+                                              </control>
+
+<!-- Ende Temperatur -->
+<!-- Begin Fenster -->
+                                            <control type="group">
+                                              <left>15</left>
+                                              <top>165</top>
+                                              <include>VisibleFadeEffect</include>
+
+                                                <control type="image">
+                                                        <description>background</description>
+                                                        <left>0</left>
+                                                        <top>17</top>
+                                                        <width>230</width>
+                                                        <height>80</height>
+                                                        <texture border="15">RecentAddedBack.png</texture>
+                                                </control>
+
+
+                                                <control type="label">
+                                                          <left>10</left>
+                                                          <top>0</top>
+                                                          <width>470</width>
+                                                          <height>20</height>
+                                                          <label>Fenster</label>
+                                                          <align>left</align>
+                                                          <aligny>top</aligny>
+                                                          <scroll>true</scroll>
+                                                          <scrollspeed>50</scrollspeed>
+                                                    <font>font12</font>
+                                                    <textcolor>white</textcolor>
+                                                    <shadowcolor>black</shadowcolor>
+                                                </control>
+                                                <control type="label">
+                                                          <left>10</left>
+                                                          <top>25</top>
+                                                          <width>470</width>
+                                                          <height>20</height>
+                                                          <label>Gästez. Bett</label>
+                                                          <align>left</align>
+                                                          <aligny>top</aligny>
+                                                          <scroll>true</scroll>
+                                                          <scrollspeed>50</scrollspeed>
+                                                    <font>font12</font>
+                                                    <textcolor>grey</textcolor>
+                                                    <shadowcolor>black</shadowcolor>
+                                                </control>
+                                                <control type="label">
+                                                          <left>10</left>
+                                                          <top>45</top>
+                                                          <width>470</width>
+                                                          <height>20</height>
+                                                          <label>Gästez. Sofa</label>
+                                                          <align>left</align>
+                                                          <aligny>top</aligny>
+                                                          <scroll>true</scroll>
+                                                          <scrollspeed>50</scrollspeed>
+                                                    <font>font12</font>
+                                                    <textcolor>grey</textcolor>
+                                                    <shadowcolor>black</shadowcolor>
+                                                </control>
+                                                <control type="label">
+                                                          <left>10</left>
+                                                          <top>65</top>
+                                                          <width>470</width>
+                                                          <height>20</height>
+                                                          <label>Dusche</label>
+                                                          <align>left</align>
+                                                          <aligny>top</aligny>
+                                                          <scroll>true</scroll>
+                                                          <scrollspeed>50</scrollspeed>
+                                                    <font>font12</font>
+                                                    <textcolor>grey</textcolor>
+                                                    <shadowcolor>black</shadowcolor>
+                                                </control>
+
+
+                                                <control type="label">
+                                                          <left>10</left>
+                                                          <top>25</top>
+                                                          <width>210</width>
+                                                          <height>20</height>
+                                                          <label>$INFO[Window.Property(Fenster.Fenster_Tobias_SZ)]</label>
+                                                          <align>right</align>
+                                                          <aligny>top</aligny>
+                                                          <scroll>true</scroll>
+                                                          <scrollspeed>50</scrollspeed>
+                                                    <font>font12</font>
+                                                    <textcolor>grey</textcolor>
+                                                    <shadowcolor>black</shadowcolor>
+                                                </control>
+                                                <control type="label">
+                                                          <left>10</left>
+                                                          <top>45</top>
+                                                          <width>210</width>
+                                                          <height>20</height>
+                                                          <label>$INFO[Window.Property(Fenster.Fenster_Tobias_WZ)]</label>
+                                                          <align>right</align>
+                                                          <aligny>top</aligny>
+                                                          <scroll>true</scroll>
+                                                          <scrollspeed>50</scrollspeed>
+                                                    <font>font12</font>
+                                                    <textcolor>grey</textcolor>
+                                                    <shadowcolor>black</shadowcolor>
+                                                </control>
+                                                <control type="label">
+                                                          <left>10</left>
+                                                          <top>65</top>
+                                                          <width>210</width>
+                                                          <height>20</height>
+                                                          <label>$INFO[Window.Property(Fenster.Fenster_Dusche)]</label>
+                                                          <align>right</align>
+                                                          <aligny>top</aligny>
+                                                          <scroll>true</scroll>
+                                                          <scrollspeed>50</scrollspeed>
+                                                    <font>font12</font>
+                                                    <textcolor>grey</textcolor>
+                                                    <shadowcolor>black</shadowcolor>
+                                                </control>
+                                              </control>
+
+<!-- Ende Fenster -->
+<!-- Begin Hauswirtschaft -->
+                                            <control type="group">
+                                              <left>250</left>
+                                              <top>30</top>
+                                              <include>VisibleFadeEffect</include>
+
+                                                <control type="image">
+                                                        <description>background</description>
+                                                        <left>0</left>
+                                                        <top>17</top>
+                                                        <width>230</width>
+                                                        <height>100</height>
+                                                        <texture border="15">RecentAddedBack.png</texture>
+                                                </control>
+
+
+                                                <control type="label">
+                                                          <left>10</left>
+                                                          <top>0</top>
+                                                          <width>470</width>
+                                                          <height>20</height>
+                                                          <label>Hauswirtschaft</label>
+                                                          <align>left</align>
+                                                          <aligny>top</aligny>
+                                                          <scroll>true</scroll>
+                                                          <scrollspeed>50</scrollspeed>
+                                                    <font>font12</font>
+                                                    <textcolor>white</textcolor>
+                                                    <shadowcolor>black</shadowcolor>
+                                                </control>
+                                                <control type="label">
+                                                          <left>10</left>
+                                                          <top>25</top>
+                                                          <width>470</width>
+                                                          <height>20</height>
+                                                          <label>Trockner</label>
+                                                          <align>left</align>
+                                                          <aligny>top</aligny>
+                                                          <scroll>true</scroll>
+                                                          <scrollspeed>50</scrollspeed>
+                                                    <font>font12</font>
+                                                    <textcolor>grey</textcolor>
+                                                    <shadowcolor>black</shadowcolor>
+                                                </control>
+                                                <control type="label">
+                                                          <left>10</left>
+                                                          <top>45</top>
+                                                          <width>470</width>
+                                                          <height>20</height>
+                                                          <label>Waschmaschine</label>
+                                                          <align>left</align>
+                                                          <aligny>top</aligny>
+                                                          <scroll>true</scroll>
+                                                          <scrollspeed>50</scrollspeed>
+                                                    <font>font12</font>
+                                                    <textcolor>grey</textcolor>
+                                                    <shadowcolor>black</shadowcolor>
+                                                </control>
+                                                <control type="label">
+                                                          <left>10</left>
+                                                          <top>65</top>
+                                                          <width>470</width>
+                                                          <height>20</height>
+                                                          <label>Spühlmaschine</label>
+                                                          <align>left</align>
+                                                          <aligny>top</aligny>
+                                                          <scroll>true</scroll>
+                                                          <scrollspeed>50</scrollspeed>
+                                                    <font>font12</font>
+                                                    <textcolor>grey</textcolor>
+                                                    <shadowcolor>black</shadowcolor>
+                                                </control>
+                                                <control type="label">
+                                                          <left>10</left>
+                                                          <top>85</top>
+                                                          <width>470</width>
+                                                          <height>20</height>
+                                                          <label>Staubsauger</label>
+                                                          <align>left</align>
+                                                          <aligny>top</aligny>
+                                                          <scroll>true</scroll>
+                                                          <scrollspeed>50</scrollspeed>
+                                                    <font>font12</font>
+                                                    <textcolor>grey</textcolor>
+                                                    <shadowcolor>black</shadowcolor>
+                                                </control>
+
+
+
+                                                <control type="label">
+                                                          <left>10</left>
+                                                          <top>25</top>
+                                                          <width>210</width>
+                                                          <height>20</height>
+                                                          <label>$INFO[Window.Property(Hauswirtschaft.Trockner_Status)]</label>
+                                                          <align>right</align>
+                                                          <aligny>top</aligny>
+                                                          <scroll>true</scroll>
+                                                          <scrollspeed>50</scrollspeed>
+                                                    <font>font12</font>
+                                                    <textcolor>grey</textcolor>
+                                                    <shadowcolor>black</shadowcolor>
+                                                </control>
+                                                <control type="label">
+                                                          <left>10</left>
+                                                          <top>45</top>
+                                                          <width>210</width>
+                                                          <height>20</height>
+                                                          <label>$INFO[Window.Property(Hauswirtschaft.Waschmaschine_Status)]</label>
+                                                          <align>right</align>
+                                                          <aligny>top</aligny>
+                                                          <scroll>true</scroll>
+                                                          <scrollspeed>50</scrollspeed>
+                                                    <font>font12</font>
+                                                    <textcolor>grey</textcolor>
+                                                    <shadowcolor>black</shadowcolor>
+                                                </control>
+                                                <control type="label">
+                                                          <left>10</left>
+                                                          <top>65</top>
+                                                          <width>210</width>
+                                                          <height>20</height>
+                                                          <label>$INFO[Window.Property(Hauswirtschaft.Spuehlmaschine_Status)]</label>
+                                                          <align>right</align>
+                                                          <aligny>top</aligny>
+                                                          <scroll>true</scroll>
+                                                          <scrollspeed>50</scrollspeed>
+                                                    <font>font12</font>
+                                                    <textcolor>grey</textcolor>
+                                                    <shadowcolor>black</shadowcolor>
+                                                </control>
+                                                <control type="label">
+                                                          <left>10</left>
+                                                          <top>85</top>
+                                                          <width>210</width>
+                                                          <height>20</height>
+                                                          <label>$INFO[Window.Property(Hauswirtschaft.StaubsaugerEG)]</label>
+                                                          <align>right</align>
+                                                          <aligny>top</aligny>
+                                                          <scroll>true</scroll>
+                                                          <scrollspeed>50</scrollspeed>
+                                                    <font>font12</font>
+                                                    <textcolor>grey</textcolor>
+                                                    <shadowcolor>black</shadowcolor>
+                                                </control>
+
+                                              </control>
+
+<!-- Ende Hauswirtschaft -->
+<!-- Begin Muellstate -->
+                                            <control type="group">
+                                              <left>250</left>
+                                              <top>145</top>
+                                              <include>VisibleFadeEffect</include>
+
+                                                <control type="image">
+                                                        <description>background</description>
+                                                        <left>0</left>
+                                                        <top>17</top>
+                                                        <width>230</width>
+                                                        <height>100</height>
+                                                        <texture border="15">RecentAddedBack.png</texture>
+                                                </control>
+
+
+                                                <control type="label">
+                                                          <left>10</left>
+                                                          <top>0</top>
+                                                          <width>470</width>
+                                                          <height>20</height>
+                                                          <label>Mülltonnenleerung</label>
+                                                          <align>left</align>
+                                                          <aligny>top</aligny>
+                                                          <scroll>true</scroll>
+                                                          <scrollspeed>50</scrollspeed>
+                                                    <font>font12</font>
+                                                    <textcolor>white</textcolor>
+                                                    <shadowcolor>black</shadowcolor>
+                                                </control>
+                                                <control type="label">
+                                                          <left>10</left>
+                                                          <top>25</top>
+                                                          <width>470</width>
+                                                          <height>20</height>
+                                                          <label>Restmüll</label>
+                                                          <align>left</align>
+                                                          <aligny>top</aligny>
+                                                          <scroll>true</scroll>
+                                                          <scrollspeed>50</scrollspeed>
+                                                    <font>font12</font>
+                                                    <textcolor>grey</textcolor>
+                                                    <shadowcolor>black</shadowcolor>
+                                                </control>
+                                                <control type="label">
+                                                          <left>10</left>
+                                                          <top>45</top>
+                                                          <width>470</width>
+                                                          <height>20</height>
+                                                          <label>Biomüll</label>
+                                                          <align>left</align>
+                                                          <aligny>top</aligny>
+                                                          <scroll>true</scroll>
+                                                          <scrollspeed>50</scrollspeed>
+                                                    <font>font12</font>
+                                                    <textcolor>grey</textcolor>
+                                                    <shadowcolor>black</shadowcolor>
+                                                </control>
+                                                <control type="label">
+                                                          <left>10</left>
+                                                          <top>65</top>
+                                                          <width>470</width>
+                                                          <height>20</height>
+                                                          <label>Gelbe Tonne</label>
+                                                          <align>left</align>
+                                                          <aligny>top</aligny>
+                                                          <scroll>true</scroll>
+                                                          <scrollspeed>50</scrollspeed>
+                                                    <font>font12</font>
+                                                    <textcolor>grey</textcolor>
+                                                    <shadowcolor>black</shadowcolor>
+                                                </control>
+                                                <control type="label">
+                                                          <left>10</left>
+                                                          <top>85</top>
+                                                          <width>470</width>
+                                                          <height>20</height>
+                                                          <label>Papiertonne</label>
+                                                          <align>left</align>
+                                                          <aligny>top</aligny>
+                                                          <scroll>true</scroll>
+                                                          <scrollspeed>50</scrollspeed>
+                                                    <font>font12</font>
+                                                    <textcolor>grey</textcolor>
+                                                    <shadowcolor>black</shadowcolor>
+                                                </control>
+
+
+
+                                                <control type="label">
+                                                          <left>10</left>
+                                                          <top>25</top>
+                                                          <width>210</width>
+                                                          <height>20</height>
+                                                          <label>in $INFO[Window.Property(Muellstate.RestmuellIn)] Tagen</label>
+                                                          <align>right</align>
+                                                          <aligny>top</aligny>
+                                                          <scroll>true</scroll>
+                                                          <scrollspeed>50</scrollspeed>
+                                                    <font>font12</font>
+                                                    <textcolor>grey</textcolor>
+                                                    <shadowcolor>black</shadowcolor>
+                                                </control>
+                                                <control type="label">
+                                                          <left>10</left>
+                                                          <top>45</top>
+                                                          <width>210</width>
+                                                          <height>20</height>
+                                                          <label>in $INFO[Window.Property(Muellstate.BioabfallIn)] Tagen</label>
+                                                          <align>right</align>
+                                                          <aligny>top</aligny>
+                                                          <scroll>true</scroll>
+                                                          <scrollspeed>50</scrollspeed>
+                                                    <font>font12</font>
+                                                    <textcolor>grey</textcolor>
+                                                    <shadowcolor>black</shadowcolor>
+                                                </control>
+                                                <control type="label">
+                                                          <left>10</left>
+                                                          <top>65</top>
+                                                          <width>210</width>
+                                                          <height>20</height>
+                                                          <label>in $INFO[Window.Property(Muellstate.GelbetonneIn)] Tagen</label>
+                                                          <align>right</align>
+                                                          <aligny>top</aligny>
+                                                          <scroll>true</scroll>
+                                                          <scrollspeed>50</scrollspeed>
+                                                    <font>font12</font>
+                                                    <textcolor>grey</textcolor>
+                                                    <shadowcolor>black</shadowcolor>
+                                                </control>
+                                                <control type="label">
+                                                          <left>10</left>
+                                                          <top>85</top>
+                                                          <width>210</width>
+                                                          <height>20</height>
+                                                          <label>in $INFO[Window.Property(Muellstate.PapiertonneIn)] Tagen</label>
+                                                          <align>right</align>
+                                                          <aligny>top</aligny>
+                                                          <scroll>true</scroll>
+                                                          <scrollspeed>50</scrollspeed>
+                                                    <font>font12</font>
+                                                    <textcolor>grey</textcolor>
+                                                    <shadowcolor>black</shadowcolor>
+                                                </control>
+
+                                              </control>
+
+<!-- Ende Muellstate -->
+
+
+
+
+                        </control>
+
+
+
+
+
+
+	</include>
+</includes>
+
+

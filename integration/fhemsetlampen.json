@@ -1,0 +1,21 @@
+{
+  "title":"Beleuchtung",
+  "entries":
+  [{
+	"name": "Christbaum on",
+	"cmd": "set Steinlampe_Kuhstall on",
+        "pic": "christbaum-ein.png"
+  }, {
+        "name": "Christbaum off",
+	"cmd": "set Steinlampe_Kuhstall off",
+        "pic": "christbaum-aus.png"
+  }, {
+        "name": "Ambilight on",
+	"cmd": "set Ambilight on",
+        "pic": "gluehbirne-an.png"
+  }, {
+        "name": "Ambilight off",
+	"cmd": "set Ambilight off",
+        "pic": "gluehbirne-aus.png"
+  }]
+}
