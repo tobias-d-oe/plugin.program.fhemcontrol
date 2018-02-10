@@ -112,7 +112,6 @@ fhemset     = FHEMSet()
 fhemdialogs = FHEMDialogs()
 
 
-ph.writeLog('SYSARGV:         %s' % (sys.argv), level=xbmc.LOGDEBUG)
 if len(sys.argv)>=3:
     addon_handle = int(sys.argv[1])
     params = ph.parameters_string_to_dict(sys.argv[2])
@@ -122,7 +121,6 @@ if len(sys.argv)>=3:
     title=urllib.unquote_plus(params.get('title', ''))
 elif len(sys.argv)>=1:
     params = ph.parameters_string_to_dict(sys.argv[1])
-    ph.writeLog('PARAMS:         %s' % (params), level=xbmc.LOGDEBUG)
     methode = urllib.unquote_plus(params.get('methode', ''))
     cmd = urllib.unquote_plus(params.get('cmd', ''))
     file = urllib.unquote_plus(params.get('file', ''))
@@ -155,14 +153,12 @@ elif methode=='get_sets_items':
 
     file=WINDOW.getProperty("FHEMControl.Window")
     title=WINDOW.getProperty("FHEMControl.Title")
-    ph.writeLog("IN get_sets_items2:         %s" % (title), level=xbmc.LOGDEBUG)
     feedjson = fhemdialogs.feed2container2(file,title)
 
     for sitem in feedjson:
         li = xbmcgui.ListItem(sitem['Label'], iconImage=sitem['PIC'])
         li.setProperty("URL", sitem['URL'])
         li.setProperty("CMD", sitem['CMD'])
-        ph.writeLog('CMD - SITEM :         %s' % (sitem['CMD']), level=xbmc.LOGDEBUG)
         url="plugin.program.fhemcontrol/?methode=set&cmd=%s" % (sitem['CMD'])
         xbmcplugin.addDirectoryItem(handle=addon_handle, url=url, listitem=li)
     xbmcplugin.endOfDirectory(addon_handle)

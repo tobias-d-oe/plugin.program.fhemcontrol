@@ -76,7 +76,7 @@ def fhem_get_json(ip,port,fhemdev):
   ret = ""
   try:
     tn = telnetlib.Telnet()
-    writeLog("Connect to fhem %s:%s" % (str(ip),str(port)), level=xbmc.LOGNOTICE)
+    writeLog("Connect to fhem %s:%s" % (str(ip),str(port)), level=xbmc.LOGDEBUG)
     tn.open(ip, port)
     tn.write("jsonlist2 %s\n" % (str(fhemdev)))
     tn.write("quit\n")
@@ -90,7 +90,7 @@ def fhem_get_json(ip,port,fhemdev):
 
 
 def kodi_set_infovar(key,value):
-    writeLog('Setting INFO Var', level=xbmc.LOGNOTICE)
+    writeLog('Setting INFO Var', level=xbmc.LOGDEBUG)
     xbmcgui.Window(10000).setProperty('%s' % (key), value)
 
 
@@ -102,8 +102,8 @@ def fhem_process(ip,port,DeviceList,AllReadings,AllInternals):
             if Reading['FHEMDev'] == Entity['Name']:
                 SearchKey=Reading['SearchKey']
                 INFOVar=Reading['INFOVar']
-                logtext="INFOVar %s Entity %s[%s] -> %s" % (Reading['INFOVar'],Reading['FHEMDev'],Reading['SearchKey'],Entity['Readings'][Reading['SearchKey']]['Value'])
-                writeLog(logtext,level=xbmc.LOGNOTICE)
+                logtext="INFOVar: %s Entity: %s[%s] -> %s" % (Reading['INFOVar'],Reading['FHEMDev'],Reading['SearchKey'],Entity['Readings'][Reading['SearchKey']]['Value'])
+                writeLog(logtext,level=xbmc.LOGDEBUG)
                 kodi_set_infovar(Reading['INFOVar'],Entity['Readings'][Reading['SearchKey']]['Value'])
                 break
     
@@ -111,8 +111,8 @@ def fhem_process(ip,port,DeviceList,AllReadings,AllInternals):
             if Internal['FHEMDev'] == Entity['Name']:
                 SearchKey=Internal['SearchKey']
                 INFOVar=Internal['INFOVar']
-                logtext="INFOVar %s Entity %s[%s] -> %s" % (Internal['INFOVar'],Internal['FHEMDev'],Internal['SearchKey'],Entity['Internals'][Internal['SearchKey']])
-                writeLog(logtext,level=xbmc.LOGNOTICE)
+                logtext="INFOVar: %s Entity: %s[%s] -> %s" % (Internal['INFOVar'],Internal['FHEMDev'],Internal['SearchKey'],Entity['Internals'][Internal['SearchKey']])
+                writeLog(logtext,level=xbmc.LOGDEBUG)
                 kodi_set_infovar(Internal['INFOVar'],Entity['Internals'][Internal['SearchKey']])
                 break
     
@@ -133,13 +133,15 @@ def fetchFhem():
       g_failedConnectionNotified = False  #reset notification flag
     hostip   = settings_getHostIp()
     hostport = settings_getHostPort()    
-    writeLog("hostip=%s" % (hostip),level=xbmc.LOGNOTICE)
-    writeLog("hostport=%s" % (hostport),level=xbmc.LOGNOTICE)
-    writeLog("DeviceList=%s" % (DeviceList),level=xbmc.LOGNOTICE)
-    FHEMJsonRes=json.loads(fhem_get_json(hostip,hostport,DeviceList))
+    writeLog("IP:           %s" % (hostip),level=xbmc.LOGDEBUG)
+    writeLog("Port:         %s" % (hostport),level=xbmc.LOGDEBUG)
+    writeLog("DeviceList:   %s" % (DeviceList),level=xbmc.LOGDEBUG)
+    try:
+      FHEMJsonRes=json.loads(fhem_get_json(hostip,hostport,DeviceList))
+    except:
+      pass
     if not FHEMJsonRes:
       writeLog('Connection Failed', level=xbmc.LOGNOTICE)
-      #print "fhem: connection to fhem failed"
       count = 10
       while (not xbmc.abortRequested) and (count > 0):
         time.sleep(1)
@@ -154,7 +156,7 @@ def fetchFhem():
         xbmc.executebuiltin("XBMC.Notification(%s,%s,%s,%s)" % (__scriptname__,text,10,__icon__))
         g_failedConnectionNotified = True
       fhem_process(hostip,hostport,DeviceList,AllReadings,AllInternals)  
-      writeLog('Connection Successfull', level=xbmc.LOGNOTICE)
+      writeLog('Connection Successfull', level=xbmc.LOGDEBUG)
       break
   return True
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<addon id="plugin.program.fhemcontrol" name="FHEM-Control" version="0.0.9" provider-name="FHEM-Control">
+<addon id="plugin.program.fhemcontrol" name="FHEM-Control" version="0.1.0" provider-name="FHEM-Control">
     <requires>
         <import addon="xbmc.python" version="2.1.0"/>
 	<!--	<import addon="script.module.requests" version="2.3.0" /> -->
