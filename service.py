@@ -95,28 +95,30 @@ def kodi_set_infovar(key,value):
 
 
 def fhem_process(ip,port,DeviceList,AllReadings,AllInternals):
-    FHEMJsonRes=json.loads(fhem_get_json(ip,port,DeviceList))
-    
-    for Entity in FHEMJsonRes['Results']:
-        for Reading in AllReadings:
-            if Reading['FHEMDev'] == Entity['Name']:
-                SearchKey=Reading['SearchKey']
-                INFOVar=Reading['INFOVar']
-                logtext="INFOVar: %s Entity: %s[%s] -> %s" % (Reading['INFOVar'],Reading['FHEMDev'],Reading['SearchKey'],Entity['Readings'][Reading['SearchKey']]['Value'])
-                writeLog(logtext,level=xbmc.LOGDEBUG)
-                kodi_set_infovar(Reading['INFOVar'],Entity['Readings'][Reading['SearchKey']]['Value'])
-                break
-    
-        for Internal in AllInternals:
-            if Internal['FHEMDev'] == Entity['Name']:
-                SearchKey=Internal['SearchKey']
-                INFOVar=Internal['INFOVar']
-                logtext="INFOVar: %s Entity: %s[%s] -> %s" % (Internal['INFOVar'],Internal['FHEMDev'],Internal['SearchKey'],Entity['Internals'][Internal['SearchKey']])
-                writeLog(logtext,level=xbmc.LOGDEBUG)
-                kodi_set_infovar(Internal['INFOVar'],Entity['Internals'][Internal['SearchKey']])
-                break
-    
-
+    try:
+        FHEMJsonRes=json.loads(fhem_get_json(ip,port,DeviceList))
+        
+        for Entity in FHEMJsonRes['Results']:
+            for Reading in AllReadings:
+                if Reading['FHEMDev'] == Entity['Name']:
+                    SearchKey=Reading['SearchKey']
+                    INFOVar=Reading['INFOVar']
+                    logtext="INFOVar: %s Entity: %s[%s] -> %s" % (Reading['INFOVar'],Reading['FHEMDev'],Reading['SearchKey'],Entity['Readings'][Reading['SearchKey']]['Value'])
+                    writeLog(logtext,level=xbmc.LOGDEBUG)
+                    kodi_set_infovar(Reading['INFOVar'],Entity['Readings'][Reading['SearchKey']]['Value'])
+                    break
+        
+            for Internal in AllInternals:
+                if Internal['FHEMDev'] == Entity['Name']:
+                    SearchKey=Internal['SearchKey']
+                    INFOVar=Internal['INFOVar']
+                    logtext="INFOVar: %s Entity: %s[%s] -> %s" % (Internal['INFOVar'],Internal['FHEMDev'],Internal['SearchKey'],Entity['Internals'][Internal['SearchKey']])
+                    writeLog(logtext,level=xbmc.LOGDEBUG)
+                    kodi_set_infovar(Internal['INFOVar'],Entity['Internals'][Internal['SearchKey']])
+                    break
+        
+    except:
+        pass
 
 
 
@@ -136,6 +138,7 @@ def fetchFhem():
     writeLog("IP:           %s" % (hostip),level=xbmc.LOGDEBUG)
     writeLog("Port:         %s" % (hostport),level=xbmc.LOGDEBUG)
     writeLog("DeviceList:   %s" % (DeviceList),level=xbmc.LOGDEBUG)
+    FHEMJsonRes=""
     try:
       FHEMJsonRes=json.loads(fhem_get_json(hostip,hostport,DeviceList))
     except:
